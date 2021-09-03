@@ -85,6 +85,8 @@ def scrape_table():
     html_table = df.to_html()
     
     html_table = html_table.replace('\n', ' ')
+    html_table = html_table.replace('</table>', '')
+    html_table = html_table.replace('<table border="1" class="dataframe">', '')
     
     return html_table
 
